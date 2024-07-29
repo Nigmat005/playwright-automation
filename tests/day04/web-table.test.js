@@ -26,7 +26,7 @@ test.describe("Test Group", async() => {
 test('test $$ and .all()',async({page})=>{
     const table=page.locator("//table[@id='ctl00_MainContent_orderGrid']");
     const rowNum= await table.locator("//tr").count();
-    const rowLength=((await page.$$("//table[@id='ctl00_MainContent_orderGrid']//tr")).length)
+    const rowLength=(await page.$$("//table[@id='ctl00_MainContent_orderGrid']//tr")).length;
     expect(rowNum).toEqual( rowLength);
     console.log(rowNum);
     console.log(rowLength);
